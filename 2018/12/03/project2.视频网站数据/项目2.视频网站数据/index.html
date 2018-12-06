@@ -1,0 +1,936 @@
+
+
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="python," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="1234import numpy as np import pandas as pdimport matplotlib.pyplot as plt%matplotlib inline 1234567891011121314151617#读取数据data = pd.read_csv(r&apos;...path\爱奇艺视频数据.csv&apos;,engine = &apos;python&apos;)#print(data.head()">
+<meta name="keywords" content="python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="项目学习1.知乎数据清洗整理和结论研究">
+<meta property="og:url" content="http://yoursite.com/2018/12/03/project2.视频网站数据/项目2.视频网站数据/index.html">
+<meta property="og:site_name" content="DnoBlog">
+<meta property="og:description" content="1234import numpy as np import pandas as pdimport matplotlib.pyplot as plt%matplotlib inline 1234567891011121314151617#读取数据data = pd.read_csv(r&apos;...path\爱奇艺视频数据.csv&apos;,engine = &apos;python&apos;)#print(data.head()">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2018/12/03/project2.视频网站数据/项目2.视频网站数据/output_3_2.png">
+<meta property="og:image" content="http://yoursite.com/2018/12/03/project2.视频网站数据/项目2.视频网站数据/output_4_1.png">
+<meta property="og:image" content="http://yoursite.com/2018/12/03/project2.视频网站数据/项目2.视频网站数据/output_4_2.png">
+<meta property="og:updated_time" content="2018-12-06T10:54:36.724Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="项目学习1.知乎数据清洗整理和结论研究">
+<meta name="twitter:description" content="1234import numpy as np import pandas as pdimport matplotlib.pyplot as plt%matplotlib inline 1234567891011121314151617#读取数据data = pd.read_csv(r&apos;...path\爱奇艺视频数据.csv&apos;,engine = &apos;python&apos;)#print(data.head()">
+<meta name="twitter:image" content="http://yoursite.com/2018/12/03/project2.视频网站数据/项目2.视频网站数据/output_3_2.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/12/03/project2.视频网站数据/项目2.视频网站数据/"/>
+
+
+
+
+
+  <title>项目学习1.知乎数据清洗整理和结论研究 | DnoBlog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">DnoBlog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">学会思考</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/03/project2.视频网站数据/项目2.视频网站数据/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="萨尔茨堡的树枝">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DnoBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">项目学习1.知乎数据清洗整理和结论研究</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-03T12:52:00+08:00">
+                2018-12-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2,364
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  10
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np </span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line">%matplotlib inline</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#读取数据</span></span><br><span class="line">data = pd.read_csv(<span class="string">r'...path\爱奇艺视频数据.csv'</span>,engine = <span class="string">'python'</span>)</span><br><span class="line"><span class="comment">#print(data.head())</span></span><br><span class="line"></span><br><span class="line"><span class="string">'''1、数据清洗 - 去除空值</span></span><br><span class="line"><span class="string">要求：创建函数</span></span><br><span class="line"><span class="string">提示：fillna方法填充缺失数据，注意inplace参数'''</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">data_cleaning</span><span class="params">(df)</span>:</span></span><br><span class="line">    cols = df.columns</span><br><span class="line">    <span class="keyword">for</span> col <span class="keyword">in</span> cols:</span><br><span class="line">        <span class="keyword">if</span> df[col].dtype == <span class="string">'object'</span>:         <span class="comment">#数据类型的判断</span></span><br><span class="line">            df[col].fillna(<span class="string">'缺失数据'</span>,inplace=<span class="keyword">True</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            df[col].fillna(<span class="number">0</span>,inplace=<span class="keyword">True</span>)</span><br><span class="line">    <span class="keyword">return</span>(df)</span><br><span class="line">data_c = data_cleaning(data)        </span><br><span class="line">print(data_c.head(<span class="number">3</span>))</span><br></pre></td></tr></table></figure>
+<pre><code>       数据获取日期    演员  视频ID                                        详细链接  \
+0  2016年5月24日  缺失数据   100  http://www.iqiyi.com/dianshiju/douyu2.html   
+1  2016年5月24日  缺失数据  1037   http://www.iqiyi.com/dianshiju/jhuxd.html   
+2  2016年5月24日  缺失数据  1573  http://www.iqiyi.com/dianshiju/fmxqj2.html   
+
+               剧名   状态                     类型 来源平台     整理后剧名  更新时间   ...     \
+0     斗鱼Ⅱ(1-20)全集  已完结  粤语电视剧/偶像剧/言情剧/超清1080P  爱奇艺       斗鱼2  缺失数据   ...      
+1    江湖兄弟(1-32)全集  已完结  粤语电视剧/悬疑剧/年代剧/超清1080P  爱奇艺    江湖兄弟全集  缺失数据   ...      
+2  肥猫寻亲记2(1-30)全集  已完结           粤语电视剧/家庭剧/喜剧  爱奇艺  肥猫寻亲记2全集  缺失数据   ...      
+
+     上映年份                                                 简介    导演     差评数  \
+0  2004.0  在单子杀了阿豹派去强暴语燕的手下而入狱后，众人的生活都有了改变。语燕为了让自己不再是于皓的包...  缺失数据  2034.0   
+1  2008.0  1930年代，海龙城首富唐英明用五斗上等珍珠，击败列国商业对手，买得与铁达尼齐名之奥丽号邮轮...  缺失数据  7291.0   
+2  2005.0  肥猫经历了几番风雨，终于寻回了他的亲生弟妹们：年轻有为的医生二弟华世杰、大律师三妹婉容、美丽...  缺失数据  1183.0   
+
+      评分人数         播放量  更新至   总集数  第几季      好评数  
+0  32722.0   8069526.0  0.0  20.0    2  30688.0  
+1  39492.0  70213917.0  0.0  32.0    1  32201.0  
+2  10105.0   3310768.0  0.0  30.0    1   8922.0  
+
+[3 rows x 24 columns]
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'''2、数据清洗 - 时间标签转化</span></span><br><span class="line"><span class="string">要求：</span></span><br><span class="line"><span class="string">① 将时间字段改为时间标签</span></span><br><span class="line"><span class="string">② 创建函数</span></span><br><span class="line"><span class="string">提示：</span></span><br><span class="line"><span class="string">需要将中文日期转化为非中文日期，例如 2016年5月24日 → 2016.5.24'''</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">timechange</span><span class="params">(df,*cols)</span>:</span></span><br><span class="line">    <span class="keyword">for</span> col <span class="keyword">in</span> cols:</span><br><span class="line">        df[col] = df[col].astype(str).str.replace(<span class="string">'年'</span>,<span class="string">'.'</span>)     <span class="comment">#.astype(str).str.replace</span></span><br><span class="line">        df[col] = df[col].astype(str).str.replace(<span class="string">'月'</span>,<span class="string">'.'</span>)</span><br><span class="line">        df[col] = df[col].astype(str).str.replace(<span class="string">'日'</span>,<span class="string">''</span>)</span><br><span class="line">        df[col] = pd.to_datetime(df[col])</span><br><span class="line">    <span class="keyword">return</span>(df)</span><br><span class="line"><span class="comment"># 该函数将输入列名的列，改为DatetimeIndex格式</span></span><br><span class="line"></span><br><span class="line">data_c2 = timechange(data_c,<span class="string">'数据获取日期'</span>)</span><br><span class="line">print(data_c2.head(<span class="number">3</span>))</span><br></pre></td></tr></table></figure>
+<pre><code>      数据获取日期    演员  视频ID                                        详细链接  \
+0 2016-05-24  缺失数据   100  http://www.iqiyi.com/dianshiju/douyu2.html   
+1 2016-05-24  缺失数据  1037   http://www.iqiyi.com/dianshiju/jhuxd.html   
+2 2016-05-24  缺失数据  1573  http://www.iqiyi.com/dianshiju/fmxqj2.html   
+
+               剧名   状态                     类型 来源平台     整理后剧名  更新时间   ...     \
+0     斗鱼Ⅱ(1-20)全集  已完结  粤语电视剧/偶像剧/言情剧/超清1080P  爱奇艺       斗鱼2  缺失数据   ...      
+1    江湖兄弟(1-32)全集  已完结  粤语电视剧/悬疑剧/年代剧/超清1080P  爱奇艺    江湖兄弟全集  缺失数据   ...      
+2  肥猫寻亲记2(1-30)全集  已完结           粤语电视剧/家庭剧/喜剧  爱奇艺  肥猫寻亲记2全集  缺失数据   ...      
+
+     上映年份                                                 简介    导演     差评数  \
+0  2004.0  在单子杀了阿豹派去强暴语燕的手下而入狱后，众人的生活都有了改变。语燕为了让自己不再是于皓的包...  缺失数据  2034.0   
+1  2008.0  1930年代，海龙城首富唐英明用五斗上等珍珠，击败列国商业对手，买得与铁达尼齐名之奥丽号邮轮...  缺失数据  7291.0   
+2  2005.0  肥猫经历了几番风雨，终于寻回了他的亲生弟妹们：年轻有为的医生二弟华世杰、大律师三妹婉容、美丽...  缺失数据  1183.0   
+
+      评分人数         播放量  更新至   总集数  第几季      好评数  
+0  32722.0   8069526.0  0.0  20.0    2  30688.0  
+1  39492.0  70213917.0  0.0  32.0    1  32201.0  
+2  10105.0   3310768.0  0.0  30.0    1   8922.0  
+
+[3 rows x 24 columns]
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'''3、问题1 分析出不同导演电影的好评率，并筛选出TOP20</span></span><br><span class="line"><span class="string">要求：</span></span><br><span class="line"><span class="string">① 计算统计出不同导演的好评率，不要求创建函数</span></span><br><span class="line"><span class="string">② 通过多系列柱状图，做图表可视化</span></span><br><span class="line"><span class="string">提示：</span></span><br><span class="line"><span class="string">① 好评率 = 好评数 / 评分人数</span></span><br><span class="line"><span class="string">② 可自己设定图表风格'''</span></span><br><span class="line"></span><br><span class="line">data_director = data_c2.groupby(<span class="string">'导演'</span>).sum()[[<span class="string">'好评数'</span>,<span class="string">'评分人数'</span>]]</span><br><span class="line">data_director[<span class="string">'好评率'</span>] = data_director[<span class="string">'好评数'</span>]/data_director[<span class="string">'评分人数'</span>]</span><br><span class="line">result_q1 = data_director.sort_values([<span class="string">'好评率'</span>],ascending=<span class="keyword">False</span>)[:<span class="number">20</span>]   <span class="comment">#前20名</span></span><br><span class="line"><span class="comment">#计算统计不同导演的好评率</span></span><br><span class="line">print(result_q1)</span><br><span class="line"></span><br><span class="line">result_q1[<span class="string">'好评率'</span>].plot(kind=<span class="string">'bar'</span>,</span><br><span class="line">                     color = <span class="string">'k'</span>,</span><br><span class="line">                     width = <span class="number">0.8</span>,</span><br><span class="line">                     alpha = <span class="number">0.4</span>,</span><br><span class="line">                     rot =<span class="number">45</span>,</span><br><span class="line">                     grid = <span class="keyword">True</span>,</span><br><span class="line">                     ylim = [<span class="number">0.98</span>,<span class="number">1</span>],</span><br><span class="line">                     figsize=(<span class="number">12</span>,<span class="number">4</span>),</span><br><span class="line">                     title = <span class="string">'不同导演的电影好评率'</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>                  好评数          评分人数       好评率
+导演                                           
+王静       5.601448e+06  5.602704e+06  0.999776
+萧锋       4.415545e+07  4.416801e+07  0.999716
+向灼       3.685386e+06  3.691240e+06  0.998414
+乌兰塔娜     1.916524e+07  1.920091e+07  0.998142
+徐宗政      3.113422e+06  3.123920e+06  0.996639
+欧凡       3.088701e+06  3.100421e+06  0.996220
+肖光辉      3.264290e+05  3.284140e+05  0.993956
+张国立/罗长安  8.177111e+06  8.230880e+06  0.993467
+刘逢声/林峰   3.591638e+06  3.617351e+06  0.992892
+林添一      1.049628e+09  1.057556e+09  0.992504
+毛尉光      1.747925e+06  1.766237e+06  0.989632
+郭东旭      1.027664e+06  1.039609e+06  0.988510
+苏沅峰/张艺腾  3.600976e+06  3.643071e+06  0.988445
+袁刚/成志超   1.185439e+07  1.200596e+07  0.987375
+胡雪杨      1.042170e+06  1.056247e+06  0.986673
+丁晓雄      1.568219e+06  1.591727e+06  0.985231
+延艺       4.094535e+07  4.157757e+07  0.984794
+潇庸       5.338679e+06  5.427978e+06  0.983548
+白羽/陈迅    1.705608e+07  1.737295e+07  0.981761
+张蠡/姜峰    2.100617e+08  2.143382e+08  0.980047
+
+
+
+
+
+&lt;matplotlib.axes._subplots.AxesSubplot at 0x207629e5ac8&gt;
+</code></pre><p><img src="output_3_2.png" alt="png"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'''4、问题2 统计分析2001-2016年每年评影人数总量</span></span><br><span class="line"><span class="string">要求：</span></span><br><span class="line"><span class="string">① 计算统计出2001-2016年每年评影人数总量，不要求创建函数</span></span><br><span class="line"><span class="string">② 通过面积图，做图表可视化，分析每年人数总量变化规律</span></span><br><span class="line"><span class="string">③ 验证是否有异常值（极度异常）</span></span><br><span class="line"><span class="string">④ 创建函数分析出数据外限最大最小值）</span></span><br><span class="line"><span class="string">⑤ 筛选查看异常值 → 是否异常值就是每年的热门电影？</span></span><br><span class="line"><span class="string">提示：</span></span><br><span class="line"><span class="string">① 通过箱型图验证异常值情况</span></span><br><span class="line"><span class="string">② 通过quantile(q=0.5)方法，得到四分位数</span></span><br><span class="line"><span class="string">③ IQR=Q3-Q1</span></span><br><span class="line"><span class="string">④ 外限：最大值区间Q3+3IQR,最小值区间Q1-3IQR （IQR=Q3-Q1）</span></span><br><span class="line"><span class="string">⑤ 可自己设定图表风格'''</span></span><br><span class="line"></span><br><span class="line">data_year = data_c2[[<span class="string">'导演'</span>,<span class="string">'上映年份'</span>,<span class="string">'整理后剧名'</span>]].drop_duplicates()</span><br><span class="line">data_year = data_year[data_year[<span class="string">'上映年份'</span>] != <span class="number">0</span> ]</span><br><span class="line"><span class="comment"># 筛选出不同年份的数据，去除‘上映年份’字段缺失数据</span></span><br><span class="line">print(data_year.head())</span><br><span class="line"></span><br><span class="line">data_year1 = data_c2.groupby(<span class="string">'整理后剧名'</span>).sum()[[<span class="string">'评分人数'</span>,<span class="string">'好评数'</span>]]</span><br><span class="line">print(data_year1.head())</span><br><span class="line"><span class="comment"># 求出不同剧的评分人数、好评数总和</span></span><br><span class="line"></span><br><span class="line">data_year2 = pd.merge(data_year,data_year1,left_on=<span class="string">'整理后剧名'</span>,right_index = <span class="keyword">True</span>)</span><br><span class="line">print(data_year2.head())</span><br><span class="line"><span class="comment"># 合并数据，得到不同年份，不同剧的评分人数、好评数总和</span></span><br><span class="line"></span><br><span class="line">data_year3 = data_year2.groupby(<span class="string">'上映年份'</span>).sum()[[<span class="string">'评分人数'</span>,<span class="string">'好评数'</span>]]</span><br><span class="line">print(data_year3.head())</span><br><span class="line"></span><br><span class="line">figq = plt.figure(figsize=(<span class="number">12</span>,<span class="number">4</span>))</span><br><span class="line">data_year3[<span class="string">'评分人数'</span>].loc[<span class="number">2000</span>:].plot.area(figsize= (<span class="number">10</span>,<span class="number">4</span>),        <span class="comment">#2000年后的数据</span></span><br><span class="line">                                       grid = <span class="keyword">True</span>,</span><br><span class="line">                                       color = <span class="string">'g'</span>,</span><br><span class="line">                                       alpha= <span class="number">0.8</span>)</span><br><span class="line">plt.xticks(range(<span class="number">2001</span>,<span class="number">2016</span>))</span><br><span class="line">plt.title(<span class="string">'2001-2016年每年评影人数总量统计'</span>)</span><br><span class="line"><span class="comment"># 创建面积图</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 每年影评人数通过每个电影来判断是否合理？</span></span><br><span class="line"><span class="comment"># 存在异常值，哪些是异常值？</span></span><br><span class="line">fig,axes = plt.subplots(<span class="number">4</span>,<span class="number">4</span>,figsize=(<span class="number">10</span>,<span class="number">16</span>))</span><br><span class="line">start =<span class="number">2001</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">4</span>):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">4</span>):</span><br><span class="line">        data = data_year2[data_year2[<span class="string">'上映年份'</span>] == start]</span><br><span class="line">        data[[<span class="string">'评分人数'</span>,<span class="string">'好评数'</span>]].boxplot(whis = <span class="number">3</span>,<span class="comment"># IQR为3</span></span><br><span class="line">                                    return_type=<span class="string">'dict'</span>,ax=axes[i,j])<span class="comment"># 创建矩阵箱型图</span></span><br><span class="line">        start += <span class="number">1</span></span><br><span class="line"><span class="comment"># 发现基本每年的数据中都有异常值，且为极度异常</span></span><br></pre></td></tr></table></figure>
+<pre><code>     导演    上映年份     整理后剧名
+0  缺失数据  2004.0       斗鱼2
+1  缺失数据  2008.0    江湖兄弟全集
+2  缺失数据  2005.0  肥猫寻亲记2全集
+3  缺失数据  2006.0    舞台姐妹全集
+4  缺失数据  2007.0   18禁不禁全集
+                      评分人数        好评数
+整理后剧名                                
+101网校高考历史冲刺考点解析       90.0       78.0
+10品官吴山羊            57715.0    38736.0
+10大奇冤            3002099.0  2801151.0
+10天10夜             18209.0    11299.0
+10指连心              14852.0    10617.0
+     导演    上映年份     整理后剧名        评分人数         好评数
+0  缺失数据  2004.0       斗鱼2   1488378.0   1398674.0
+1  缺失数据  2008.0    江湖兄弟全集   1809908.0   1477701.0
+2  缺失数据  2005.0  肥猫寻亲记2全集    461860.0    407507.0
+3  缺失数据  2006.0    舞台姐妹全集    120525.0     99885.0
+4  缺失数据  2007.0   18禁不禁全集  34402833.0  31482452.0
+             评分人数        好评数
+上映年份                        
+1937.0    84367.0    63120.0
+1985.0   163064.0   135462.0
+1986.0    58593.0    41216.0
+1987.0  3930018.0  3728651.0
+1988.0   410722.0   337484.0
+</code></pre><p><img src="output_4_1.png" alt="png"></p>
+<p><img src="output_4_2.png" alt="png"></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>请我喝一杯咖啡~</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="萨尔茨堡的树枝 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/python/" rel="tag"># python</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/01/project1.知乎/项目1.知乎数据清洗整理和结论研究/" rel="next" title="项目学习1.知乎数据清洗整理和结论研究">
+                <i class="fa fa-chevron-left"></i> 项目学习1.知乎数据清洗整理和结论研究
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/12/06/多学习 多准备 抓住机会/" rel="prev" title="多学习 多准备 抓住机会">
+                多学习 多准备 抓住机会 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar1.jpg"
+                alt="萨尔茨堡的树枝" />
+            
+              <p class="site-author-name" itemprop="name">萨尔茨堡的树枝</p>
+              <p class="site-description motion-element" itemprop="description">好的量变引起质变</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/Dnotameni" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://weibo.com/Dnohitotsu" target="_blank" title="Weibo">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://douban.com/people/120827725" target="_blank" title="Douban">
+                      
+                        <i class="fa fa-fw fa-star"></i>Douban</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        ﻿<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-pagelines"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">萨尔茨堡的树枝</span>
+
+  
+</div>
+
+
+
+<div class="powered-by">
+<i class="fa fa-heart-o"></i><span id="busuanzi_container_site_uv">
+  本站第<span id="busuanzi_value_site_uv"></span>位天外来客
+</span>
+</div>
+
+<div class="powered-by">
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+
+<script>
+    
+       var now = new Date(); 
+
+       function createtime() {
+       
+        var grt= new Date("07/28/2018 17:00:00");//此处修改你的建站时间或者网站上线时间
+               now.setTime(now.getTime()+250); 
+               days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+       
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum);  hnum = Math.floor(hours); 
+       
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+       
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+      
+         seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+       
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+       
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+       
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+     
+    } 
+
+setInterval("createtime()",250);
+
+</script>
+</div>
+
+
+<!-- <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+-->
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+
+
+<script type="text/javascript"
+color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+
+</body>
+</html>
