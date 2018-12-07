@@ -111,9 +111,9 @@
 <meta property="og:image" content="http://yoursite.com/images/output_46_2.png">
 <meta property="og:image" content="http://yoursite.com/images/output_48_1.png">
 <meta property="og:image" content="http://yoursite.com/images/output_48_2.png">
-<meta property="og:image" content="http://yoursite.com/2018/12/05/项目3.comprehensive-data-exploration-with-python/output_50_1.png">
+<meta property="og:image" content="http://yoursite.com/images/output_50_1.png">
 <meta property="og:image" content="http://yoursite.com/images/output_52_1.png">
-<meta property="og:updated_time" content="2018-12-07T02:24:30.535Z">
+<meta property="og:updated_time" content="2018-12-07T02:33:02.166Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="项目学习3.Kaggle利用python对数据的探索性理解">
 <meta name="twitter:description" content="https://www.kaggle.com/pmarcelino/comprehensive-data-exploration-with-python  Understand the problem#. We’ll look at each variable and do a philosophical analysis about their meaning and importance fo">
@@ -631,7 +631,7 @@ C:\Users\35038\Anaconda3\lib\site-packages\scipy\stats\stats.py:1713: FutureWarn
 <h1 id="同方差检验"><a href="#同方差检验" class="headerlink" title="同方差检验"></a>同方差检验</h1><p>测试两个度量变量的同方差的最佳方法是用图形表示。偏离相同色散的形状有圆锥(图的一边小色散，另一边大色散)或菱形(分布中心的大量点)。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">plt.scatter(df_train[<span class="string">'GrLivArea'</span>],df_train[<span class="string">'SalePrice'</span>])</span><br></pre></td></tr></table></figure>
 <pre><code>&lt;matplotlib.collections.PathCollection at 0x1f152622c50&gt;
-</code></pre><p><img src="output_50_1.png" alt="png"></p>
+</code></pre><p><img src="/images/output_50_1.png" alt="png"></p>
 <p>此散点图的旧版本（在对数转换之前）具有圆锥形状（返回并检查’SalePrice’和相关变量之间的散点图（像Jagger样式一样移动）’）。<br>如您所见，当前的散点图不再具有圆锥形状。 这是正态化的力量！ 只是通过确保某些变量的正常性，我们解决了同方差性问题</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">plt.scatter(df_train[df_train[<span class="string">'TotalBsmtSF'</span>]&gt;<span class="number">0</span>][<span class="string">'TotalBsmtSF'</span>],df_train[df_train[<span class="string">'TotalBsmtSF'</span>]&gt;<span class="number">0</span>][<span class="string">'SalePrice'</span>])</span><br><span class="line"><span class="comment">#保证同数据</span></span><br></pre></td></tr></table></figure>
 <pre><code>&lt;matplotlib.collections.PathCollection at 0x1f14c7f1f98&gt;
