@@ -113,7 +113,7 @@
 <meta property="og:image" content="http://yoursite.com/images/output_48_2.png">
 <meta property="og:image" content="http://yoursite.com/images/output_50_1.png">
 <meta property="og:image" content="http://yoursite.com/images/output_52_1.png">
-<meta property="og:updated_time" content="2018-12-09T05:14:09.454Z">
+<meta property="og:updated_time" content="2018-12-09T07:03:25.117Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="项目学习3.Kaggle利用python对数据的探索性理解">
 <meta name="twitter:description" content="https://www.kaggle.com/pmarcelino/comprehensive-data-exploration-with-python  Understand the problem#. We’ll look at each variable and do a philosophical analysis about their meaning and importance fo">
@@ -438,7 +438,8 @@
        &apos;Fence&apos;, &apos;MiscFeature&apos;, &apos;MiscVal&apos;, &apos;MoSold&apos;, &apos;YrSold&apos;, &apos;SaleType&apos;,
        &apos;SaleCondition&apos;, &apos;SalePrice&apos;],
       dtype=&apos;object&apos;)
-</code></pre><h1 id="1-我们希望得到什么？"><a href="#1-我们希望得到什么？" class="headerlink" title="1 我们希望得到什么？"></a>1 我们希望得到什么？</h1><p>为了了解数据，分析规则表：<br>1.变量- 变量名<br>2.类型- 变量类型：数值型 类别型<br>3.细分- 变量细分的识别。 我们可以定义三个可能的部分：建筑，空间或位置。 当我们说’建筑’时，我们指的是与建筑物的物理特征相关的变量（例如’OverallQual’）。 当我们说’空间’时，我们指的是一个报告房屋空间属性的变量（例如’TotalBsmtSF’）。 最后，当我们说“位置”时，我们指的是一个变量，它提供有关房屋所在位置的信息（例如“邻居”<br>4.期望- 我们对“销售价格”变量影响的期望。我们可以使用“高”、“中”和“低”作为可能值的分类量表<br>5.结论- 在我们快速查看数据之后，我们对变量重要性的结论。 我们可以保持与“期望”中相同的分类标度。<br>6.评论- 任何我们想到的一般性评论</p>
+</code></pre><a id="more"></a>
+<h1 id="1-我们希望得到什么？"><a href="#1-我们希望得到什么？" class="headerlink" title="1 我们希望得到什么？"></a>1 我们希望得到什么？</h1><p>为了了解数据，分析规则表：<br>1.变量- 变量名<br>2.类型- 变量类型：数值型 类别型<br>3.细分- 变量细分的识别。 我们可以定义三个可能的部分：建筑，空间或位置。 当我们说’建筑’时，我们指的是与建筑物的物理特征相关的变量（例如’OverallQual’）。 当我们说’空间’时，我们指的是一个报告房屋空间属性的变量（例如’TotalBsmtSF’）。 最后，当我们说“位置”时，我们指的是一个变量，它提供有关房屋所在位置的信息（例如“邻居”<br>4.期望- 我们对“销售价格”变量影响的期望。我们可以使用“高”、“中”和“低”作为可能值的分类量表<br>5.结论- 在我们快速查看数据之后，我们对变量重要性的结论。 我们可以保持与“期望”中相同的分类标度。<br>6.评论- 任何我们想到的一般性评论</p>
 <p>为了填满这一栏，我们应该阅读所有变量的描述，然后一个接一个地问自己:<br>我们在买房的时候会考虑这个变量吗?例:当我们想到我们梦想中的房子时，我们会在意它的“砖石贴面类型”吗?<br>如果是，这个变量有多重要?例:拥有“优秀”材料而不是“差”材料对外观有什么影响?以及用“Excellent”而不是“Good”?<br>这个信息已经在其他变量中描述过了吗?例:如果“LandContour”给出了物业的平整度，我们真的需要知道“LandSlope”？）</p>
 <p>目的：了解数据 找出哪几个变量重要</p>
 <p>I went through this process and concluded that the following variables can play an important role in this problem:</p>
