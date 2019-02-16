@@ -113,7 +113,7 @@
 <meta property="og:image" content="http://yoursite.com/images/output_48_2.png">
 <meta property="og:image" content="http://yoursite.com/images/output_50_1.png">
 <meta property="og:image" content="http://yoursite.com/images/output_52_1.png">
-<meta property="og:updated_time" content="2019-02-16T06:44:46.954Z">
+<meta property="og:updated_time" content="2019-02-16T08:39:10.464Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="项目学习3.Kaggle利用python对数据的探索性理解">
 <meta name="twitter:description" content="https://www.kaggle.com/pmarcelino/comprehensive-data-exploration-with-python  Understand the problem#. We’ll look at each variable and do a philosophical analysis about their meaning and importance fo">
@@ -431,6 +431,7 @@
 </ol>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#导入数据</span></span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line"><span class="keyword">from</span> scipy.stats <span class="keyword">import</span> norm</span><br><span class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> StandardScaler</span><br><span class="line"><span class="keyword">from</span> scipy <span class="keyword">import</span> stats</span><br><span class="line">%matplotlib inline</span><br><span class="line"></span><br><span class="line">df_train = pd.read_csv(<span class="string">r'C:\C\Python\all\House Prices Advanced Regression Techniques\train.csv'</span>)</span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#查看数据大致情况</span></span><br><span class="line">df_train.columns</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <pre><code>Index([&apos;Id&apos;, &apos;MSSubClass&apos;, &apos;MSZoning&apos;, &apos;LotFrontage&apos;, &apos;LotArea&apos;, &apos;Street&apos;,
        &apos;Alley&apos;, &apos;LotShape&apos;, &apos;LandContour&apos;, &apos;Utilities&apos;, &apos;LotConfig&apos;,
        &apos;LandSlope&apos;, &apos;Neighborhood&apos;, &apos;Condition1&apos;, &apos;Condition2&apos;, &apos;BldgType&apos;,
@@ -449,8 +450,7 @@
        &apos;Fence&apos;, &apos;MiscFeature&apos;, &apos;MiscVal&apos;, &apos;MoSold&apos;, &apos;YrSold&apos;, &apos;SaleType&apos;,
        &apos;SaleCondition&apos;, &apos;SalePrice&apos;],
       dtype=&apos;object&apos;)
-</code></pre><a id="more"></a>
-<h1 id="1-我们希望得到什么？"><a href="#1-我们希望得到什么？" class="headerlink" title="1 我们希望得到什么？"></a>1 我们希望得到什么？</h1><p>为了了解数据，分析规则表：</p>
+</code></pre><h1 id="1-我们希望得到什么？"><a href="#1-我们希望得到什么？" class="headerlink" title="1 我们希望得到什么？"></a>1 我们希望得到什么？</h1><p>为了了解数据，分析规则表：</p>
 <ol>
 <li>变量- 变量名</li>
 <li>类型- 变量类型：数值型 类别型</li>
