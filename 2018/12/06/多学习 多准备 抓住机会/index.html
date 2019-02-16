@@ -348,7 +348,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  34
+                  36
                 </span>
               
 
@@ -385,7 +385,20 @@
       
 
       
-        <script src="/crypto-js.js"></script><script src="/mcommon.js"></script><h3 id="encrypt-message">Please enter the password to read the blog.</h3><link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css"> <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"> <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script> <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> <div id="security"> <div> <div class="input-group"> <input type="text" class="form-control" aria-label="Enter the password." id="pass"/> <div class="input-group-btn"> <button type="button" class="btn btn-default" onclick="decryptAES()">Decrypt</button> </div> </div> </div> </div> <div id="encrypt-blog" style="display:none"> U2FsdGVkX19pvxcGtlBMSePCRhJTW9Ll3WNRF0BhoL0yYRtzj0hW/8uqPNLDQ9sXLzZZItOAHUt0Mnm1kUkIKkv89WOW9gGFER/rLdN0GxXwRrUSb1WT3vPiuA4QFtMJyse3qAXUGGJm13URR8p7XUpXo5p7dSHSFLdTSIMq/NhUQydfECEA+a++WCtmLjtvcvX4741IRMtSj1u9tA6sw8Bj64GEixIHB4EKwoI/C+St48LHKRsVAS1xEqcTKWRwSolq1iF9TNKudJNIqMWLORPn6Xf4/lnSoqT68vQJst9nEDvaUFFSzYTHFJDY0PXN/hz8TKDHjYNvxaa0dNi4SAlz+qtk5tZX5ZfGFp6aZVe2QR72/zOoXlWRLbyz+Pxn3i+lCiUUxOlkB73MZci9UH1U9qfb8H8lD7CgienISbNLmpx+SHUANDkPZ74Afdhz7GCGkNasBzvBefMAs9GsgXK6d3MMZV+9xsYJvpWXGVzQyhwbhFbPukNPxMubvCsZKPH0UVhG8lQDxQrFsRtwxEnVqjDbLOziJ9A62ke20MRQE6au0msZ6FGuAX22dTPxETabM96oBOGPQNt22V4SXoV1Qr6EflasK5Ty2ieQU9O4x0kiYllr0L5A5rYBa+UfVDSSOrcst62GrNO9JflPoCbpusro40DI3EYxxapyPpWgxcOMCVD4HbVcBtsxsbShm+o9rR9pY/5C4Oi1/tb9is4a+JyXIvPv4829yvxhp4rO/u+ZzYLr3maIWvJqgnyyejHS6q8z1Zpxkk4SfwQyk54Sa78x6vMvgPq3w2T1W8bYSDWZ9MjCinGelerlpl4iO/ig5yT8TEBsYiK6Dtxmb+JTaWvqeQL0GyXH6cQrI9g= </div>
+        <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+<div id="hbe-security">
+  <div class="hbe-input-container">
+  <input type="password" class="hbe-form-control" id="pass" placeholder="Please enter the password to read the blog." />
+    <label for="pass">Please enter the password to read the blog.</label>
+    <div class="bottom-line"></div>
+  </div>
+</div>
+<div id="decryptionError" style="display: none;">Incorrect Password!</div>
+<div id="noContentError" style="display: none;">No content to display!</div>
+<div id="encrypt-blog" style="display:none">
+U2FsdGVkX181Ixf9XeBz8EG+GnnmbENIU1jxJoC5cr4e2oOksjqo6t/aCMeLzmm6OqFC979G1eWqqDAfPWgVQkUWLETZergEpDg+Xhd807kvkxjBVr6wgPTAq+a9FSvhmHctL6700gKNa9UzWUAxPZzEeGLS9OgVrNuOBw05SQPMVmXotG4DaaT7inl87H9pwXQ/qFSXL+PBMZlZaasIFwatbDPUp2jLWgIirE+qI5f3UuftUCxr4avnC66e5GeRhGFvobFtw8vw7VW0RJgChQoCZb6j0LqLXAA2F1H71ZsvXWiHfuxaxzhia/HvXSCwqknct836MdKcebCtJsa8/dDvaF7/WEloCFgBF8wlGlHmsRQuJE+KnWGxK5jON1a0g+lwzH2VMFgskDc8PFEC+rvbNxfrKXujSP8LOl9JW2vVjFq4QXJ/vEbkwraR66P4iHWeBzdTKi/yGMj3Htud3fGCi7SO/yQZW4hF5N532gPmKw/7Zyhyc7AdxT5G8xldeIAnzdvs3bfanYKPQ8lwU8XtYe2WgmrESCfXa1j4Qr6Y8xyFCvjDDgsX3x8LU31MwNquLq5vH78Xevpry1yIuuE6yiQJAbyqp8glniR0Z2GsQHF8iWUsOS2O5goyqa38RKWoTeLMLjFGdtaq3FYRMdfRXu5fDzhyAALa7+jiJsKzFQUTs12b1QI75EV9AJ8hkkbgfGkiGkf6ZmzxCxbs5zUgi4Ryva7SxabDiNOEE46NFRzCiDaRck7P6pqEtG3Zsxw0L322P2UKKeZOiNYi63vp5QXDXv871dlNdCh7AoHnUGoNM+9yZ+Gl7a28WerNpfmt1mrP7PBF++uOgy2rgD4nUIoWTQERZsCugNc75Z0=
+</div>
+<script src="/lib/crypto-js.js"></script><script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">
       
     </div>
     
@@ -503,17 +516,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -599,22 +603,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#encrypt-message"><span class="nav-number">1.</span> <span class="nav-text">Please enter the password to read the blog.</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
